@@ -1,0 +1,87 @@
+﻿python : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate 
+limits and faster downloads.
+Au caractère Ligne:1 : 1
++ python step7_tests.py 2>&1 | Out-File -FilePath resultats_apres2.txt  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+======================================================================
+QUESTION : What is the BLEU score of the big Transformer model on English-to-German translation?
+======================================================================
+
+[ACTION] appel de retriever_tool avec {'query': 'Transformer English-to-German translation BLEU score big model', 'content_type': 'text'}
+
+[OBSERVATION]
+[texte, page 8, score 0.62] task, our big model achieves a BLEU score of 41.0, outperforming all of the previously published single models, at less than 1/4 the training cost of the previous state-of-the-art model. The Transformer (big) model trained for English-to-French used dropout rate Pdrop = 0.1, instead of 0.3. For the
+[texte, page 8, score 0.60] del (Transformer (big) in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0 BLEU, establishing a n
+
+[R├ëPONSE FINALE]
+The BLEU score of the big Transformer model on English-to-German translation is 41.0.
+
+======================================================================
+QUESTION : Show me the figure of the Transformer architecture.
+======================================================================
+
+[ACTION] appel de retriever_tool avec {'query': 'Transformer architecture', 'content_type': 'image'}
+
+[OBSERVATION]
+[image, page 4, score 0.23] fichier : output\images\page4_img0.png
+[image, page 4, score 0.22] fichier : output\images\page4_img1.png
+[image, page 3, score 0.21] fichier : output\images\page3_img0.png
+[image, page 9, score 0.18] fichier : output\images\page9_fig0.png
+
+[R├ëPONSE FINALE]
+The figure of the Transformer architecture is available on page 4 of the paper. 
+
+Please note that I've only provided the file paths and page numbers of the retrieved images. I haven't described the content of the images as per your request.
+
+======================================================================
+QUESTION : Show me the figure of multi-head attention and explain what it computes.
+======================================================================
+
+[ACTION] appel de retriever_tool avec {'query': 'multi-head attention', 'content_type': 'image text'}
+
+[OBSERVATION]
+Error invoking tool 'retriever_tool' with kwargs {'query': 'multi-head attention', 'content_type': 'image text'} with error:
+ content_type: Input should be 'text', 'image' or 'all'
+ Please fix the error and try again.
+
+[R├ëPONSE FINALE]
+To explain the figure of multi-head attention, I will first show the image and then provide the explanation.
+
+{"name": "retriever_tool", "parameters": {"content_type":"image", "query": "multi-head attention"}}
+
+======================================================================
+QUESTION : Find passages similar to the image output/images/page4_img1.png
+======================================================================
+
+[ACTION] appel de retriever_tool avec {'query': 'output/images/page4_img1.png', 'content_type': 'text'}
+
+[OBSERVATION]
+[texte, page 4, score 0.34] Scaled Dot-Product Attention Multi-Head Attention Figure 2: (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several attention layers running in parallel. query with all keys, divide each by ÔêÜdk, and apply a softmax function to obtain the weights on the values. In
+[texte, page 5, score 0.33] reserve the auto-regressive property. We implement this inside of scaled dot-product attention by masking out (setting to ÔêÆÔê×) all values in the input 
+
+[R├ëPONSE FINALE]
+Here are the passages similar to the image output/images/page4_img1.png:
+
+Scaled Dot-Product Attention Multi-Head Attention Figure 2: (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several attention layers running in parallel. query with all keys, divide each by ÔêÜdk, and apply a softmax function to obtain the weights on the values. In reserve the auto-regressive property. We implement this inside of scaled dot-product attention by masking out (setting to ÔêÆÔê×) all values in the input of the softmax which correspond to illegal connections. See Figure 2. (Page 5)
+
+Position-wise Feed-Forward Networks In addition to attention sub-layers, ht matrix between the two embedding layers and the pre-softmax linear transformation, similar to [24]. In the embedding layers, we multiply those weights by ÔêÜdmodel. (Page 5)
+
+Positional Encoding Since our model contains no recurrence and no convolution, in order for the model to make use of the order of
+
+======================================================================
+QUESTION : What is the capital of France?
+======================================================================
+
+[ACTION] appel de retriever_tool avec {'query': 'capital of France', 'content_type': 'none'}
+
+[OBSERVATION]
+Error invoking tool 'retriever_tool' with kwargs {'query': 'capital of France', 'content_type': 'none'} with error:
+ content_type: Input should be 'text', 'image' or 'all'
+ Please fix the error and try again.
+
+[R├ëPONSE FINALE]
+The question about the capital of France has nothing to do with the paper 'Attention Is All You Need'. The answer is directly: Paris.

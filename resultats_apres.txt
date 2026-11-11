@@ -1,0 +1,50 @@
+﻿
+======================================================================
+QUESTION : What is the BLEU score of the big Transformer model on English-to-German translation?
+======================================================================
+
+[ACTION] appel de retriever_tool avec {'query': 'Transformer English-to-German translation BLEU score big model', 'content_type': 'text', 'k': 1}
+
+[OBSERVATION]
+[texte, page 8, score 0.62] task, our big model achieves a BLEU score of 41.0, outperforming all of the previously published single models, at less than 1/4 the training cost of the previous state-of-the-art model. The Transformer (big) model trained for English-to-French used dropout rate Pdrop = 0.1, instead of 0.3. For the
+[texte, page 8, score 0.60] del (Transformer (big) in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0 BLEU, establishing a n
+
+[R├ëPONSE FINALE]
+The BLEU score of the big Transformer model on English-to-German translation is 41.0.
+
+======================================================================
+QUESTION : Show me the figure of the Transformer architecture.
+======================================================================
+
+[R├ëPONSE FINALE]
+{"name":"retriever_tool","parameters":{"query":"Transformer architecture","content_type":"image","k":}}
+
+======================================================================
+QUESTION : Show me the figure of multi-head attention and explain what it computes.
+======================================================================
+
+[ACTION] appel de retriever_tool avec {'k': 1, 'query': 'multi-head attention', 'content_type': 'image text'}
+
+[OBSERVATION]
+[texte, page 2, score 0.71] ub-layers. The ´¼ürst is a multi-head self-attention mechanism, and the second is a simple, position2
+[texte, page 2, score 0.68] ive resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention as described in section 3.2. Self-attention, sometimes called intra-attention is an attention mechanism relating different positions of a single sequence in order to compute a
+[texte, page 4, score 0.65] nce again projected, resulti
+
+[R├ëPONSE FINALE]
+Here is the figure of multi-head attention: /IP/figure/2
+
+Multi-head attention computes a weighted sum of the input elements, where the weights are learned attention weights. It allows the model to jointly attend to information from different representation subspaces at different positions. The model computes a weighted sum of the input elements, where the weights are learned attention weights. This is done by taking the dot product of the query and key vectors, and then applying a softmax function to obtain the attention weights. The attention weights are then used to compute a weighted sum of the value vector. This process is repeated for each position in the sequence, and the results are concatenated together to form the final output.
+
+======================================================================
+QUESTION : Find passages similar to the image output/images/page4_img1.png
+======================================================================
+
+[R├ëPONSE FINALE]
+{"name":"retriever_tool","parameters":{"query":"output/images/page4_img1.png","content_type":"text","k":}}
+
+======================================================================
+QUESTION : What is the capital of France?
+======================================================================
+
+[R├ëPONSE FINALE]
+{"name":"retriever_tool","parameters":{"query":"capital of France","content_type":"none","k":}}
